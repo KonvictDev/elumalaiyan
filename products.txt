@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Elumalaiyan Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Cinzel', 'serif'] },
+                    colors: {
+                        brand: { light: '#FDE68A', DEFAULT: '#D4AF37', dark: '#A68A27' },
+                        dark: { bg: '#121212', card: '#1a1a1a', border: '#2d2d2d' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-dark-bg text-gray-300 antialiased relative">
+
+    <nav class="bg-black sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-24 gap-4 md:gap-8">
+                <div class="flex items-center gap-4">
+                    <button id="mobile-menu-button" class="md:hidden text-white hover:text-brand transition-colors text-2xl">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <a href="index.html" class="flex-shrink-0">
+                        <img src="logo.jpg" alt="Elumalaiyan Enterprises Logo" class="h-16 md:h-20 object-contain">
+                    </a>
+                </div>
+                <div class="flex items-center space-x-5">
+                    <a href="contact.html" class="text-white hover:text-brand transition-colors text-sm font-bold bg-brand text-black px-4 py-2 rounded"><i class="fa-solid fa-envelope"></i> Get a Quote</a>
+                </div>
+            </div>
+        </div>
+        <div class="hidden md:block bg-dark-card border-t border-dark-border border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ul class="flex space-x-8 py-3 text-sm font-medium text-gray-300">
+                    <li><a href="index.html" class="hover:text-brand transition-colors">Home</a></li>
+                    <li><a href="products.html" class="text-brand transition-colors">Full Catalog</a></li>
+                    <li><a href="contact.html" class="hover:text-brand transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-t border-dark-border absolute w-full z-40">
+            <div class="px-4 py-4 space-y-3">
+                <a href="index.html" class="block text-gray-300 hover:text-brand">Home</a>
+                <a href="products.html" class="block text-brand">Full Catalog</a>
+                <a href="contact.html" class="block text-gray-300 hover:text-brand">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <h1 class="text-3xl font-serif font-bold text-white mb-8 border-b border-dark-border pb-4">Our Complete Collection</h1>
+
+        <div class="flex flex-col md:flex-row gap-8">
+            <aside class="w-full md:w-64 flex-shrink-0">
+                <div class="bg-dark-card border border-dark-border rounded-lg p-5">
+                    <h3 class="text-lg font-bold text-white mb-4">Categories</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded bg-dark-bg border-dark-border" checked> All Products</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Cooling Appliances</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Kitchen Appliances</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Cleaning Appliances</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Comfort & Lifestyle</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Wooden Beds</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Cookware & Storage</label></li>
+                    </ul>
+                    
+                    <hr class="border-dark-border my-5">
+                    
+                    <h3 class="text-lg font-bold text-white mb-4">Top Brands</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> LG</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Samsung</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Voltas</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Philips</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Prestige</label></li>
+                        <li><label class="flex items-center gap-2 cursor-pointer hover:text-white"><input type="checkbox" class="accent-brand rounded"> Milton / Cello</label></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="bg-dark-card rounded-lg p-4 border border-dark-border hover:border-brand transition-all group flex flex-col h-full">
+                    <div class="bg-white rounded-md p-4 mb-4 relative h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1527684651001-731c474adfc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="AC" class="max-h-full object-contain group-hover:scale-105 transition-transform">
+                        <span class="absolute top-2 left-2 bg-brand text-black text-[10px] font-bold px-2 py-1 rounded">COOLING</span>
+                    </div>
+                    <h3 class="text-gray-300 font-medium text-sm line-clamp-2 mb-4 group-hover:text-white">LG Inverter Split Air Conditioner</h3>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/919876543210" class="block text-center w-full bg-dark-bg border border-brand text-brand font-semibold py-2 rounded hover:bg-brand hover:text-black transition-colors text-sm">Inquire for Details</a>
+                    </div>
+                </div>
+                
+                <div class="bg-dark-card rounded-lg p-4 border border-dark-border hover:border-brand transition-all group flex flex-col h-full">
+                    <div class="bg-white rounded-md p-4 mb-4 relative h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Bed" class="max-h-full object-cover w-full group-hover:scale-105 transition-transform">
+                        <span class="absolute top-2 left-2 bg-brand text-black text-[10px] font-bold px-2 py-1 rounded">BEDS</span>
+                    </div>
+                    <h3 class="text-gray-300 font-medium text-sm line-clamp-2 mb-4 group-hover:text-white">Solid Teak Wood King Size Bed</h3>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/919876543210" class="block text-center w-full bg-dark-bg border border-brand text-brand font-semibold py-2 rounded hover:bg-brand hover:text-black transition-colors text-sm">Inquire for Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-lg p-4 border border-dark-border hover:border-brand transition-all group flex flex-col h-full">
+                    <div class="bg-white rounded-md p-4 mb-4 relative h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Fridge" class="max-h-full object-contain group-hover:scale-105 transition-transform">
+                        <span class="absolute top-2 left-2 bg-brand text-black text-[10px] font-bold px-2 py-1 rounded">KITCHEN</span>
+                    </div>
+                    <h3 class="text-gray-300 font-medium text-sm line-clamp-2 mb-4 group-hover:text-white">Samsung Double Door Refrigerator</h3>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/919876543210" class="block text-center w-full bg-dark-bg border border-brand text-brand font-semibold py-2 rounded hover:bg-brand hover:text-black transition-colors text-sm">Inquire for Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-lg p-4 border border-dark-border hover:border-brand transition-all group flex flex-col h-full">
+                    <div class="bg-white rounded-md p-4 mb-4 relative h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1621217604314-f58c73ceb7fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Cooker" class="max-h-full object-contain group-hover:scale-105 transition-transform">
+                        <span class="absolute top-2 left-2 bg-brand text-black text-[10px] font-bold px-2 py-1 rounded">COOKWARE</span>
+                    </div>
+                    <h3 class="text-gray-300 font-medium text-sm line-clamp-2 mb-4 group-hover:text-white">Prestige Pressure Cooker</h3>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/919876543210" class="block text-center w-full bg-dark-bg border border-brand text-brand font-semibold py-2 rounded hover:bg-brand hover:text-black transition-colors text-sm">Inquire for Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-lg p-4 border border-dark-border hover:border-brand transition-all group flex flex-col h-full">
+                    <div class="bg-white rounded-md p-4 mb-4 relative h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1585659722983-3a6750f2fd82?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Mixer" class="max-h-full object-contain group-hover:scale-105 transition-transform">
+                        <span class="absolute top-2 left-2 bg-brand text-black text-[10px] font-bold px-2 py-1 rounded">KITCHEN APP</span>
+                    </div>
+                    <h3 class="text-gray-300 font-medium text-sm line-clamp-2 mb-4 group-hover:text-white">Philips Mixer Grinder</h3>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/919876543210" class="block text-center w-full bg-dark-bg border border-brand text-brand font-semibold py-2 rounded hover:bg-brand hover:text-black transition-colors text-sm">Inquire for Details</a>
+                    </div>
+                </div>
+
+                <div class="bg-dark-card rounded-lg p-4 border border-dark-border hover:border-brand transition-all group flex flex-col h-full">
+                    <div class="bg-white rounded-md p-4 mb-4 relative h-48 flex items-center justify-center overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626806787426-5910811b6325?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Washing Machine" class="max-h-full object-contain group-hover:scale-105 transition-transform">
+                        <span class="absolute top-2 left-2 bg-brand text-black text-[10px] font-bold px-2 py-1 rounded">CLEANING</span>
+                    </div>
+                    <h3 class="text-gray-300 font-medium text-sm line-clamp-2 mb-4 group-hover:text-white">IFB Front Load Washing Machine</h3>
+                    <div class="mt-auto">
+                        <a href="https://wa.me/919876543210" class="block text-center w-full bg-dark-bg border border-brand text-brand font-semibold py-2 rounded hover:bg-brand hover:text-black transition-colors text-sm">Inquire for Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-gray-400 pt-16 pb-8 border-t border-dark-border mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 Elumalaiyan Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919876543210" class="fixed bottom-6 right-6 bg-[#25D366] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:-translate-y-1 transition-all z-50">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

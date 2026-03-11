@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Appliances | Elumalaiyan Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Cinzel', 'serif'] }, colors: { brand: { DEFAULT: '#D4AF37', dark: '#A68A27' }, dark: { bg: '#0a0a0a', card: '#141414', border: '#262626' } } } } }
+    </script>
+    <style>.glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); } .dark .glass-nav { background: rgba(10, 10, 10, 0.85); }</style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 dark:bg-neutral-950 dark:text-gray-300 antialiased">
+
+    <header>
+        <nav class="glass-nav sticky top-0 z-50 border-b border-gray-200 dark:border-neutral-800 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-24 gap-4">
+                    <div class="flex items-center gap-4">
+                        <button id="theme-toggle" class="text-gray-600 dark:text-gray-400 hover:text-brand text-xl rounded p-2"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+                        <a href="index.html" class="flex-shrink-0 group relative"><img src="logo.jpeg" alt="Elumalaiyan Enterprises" class="h-16 md:h-20 object-contain"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block bg-white/50 dark:bg-neutral-900/50 border-t border-gray-200 dark:border-neutral-800 backdrop-blur-sm">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <ul class="flex space-x-8 py-3 text-sm font-medium text-gray-600 dark:text-gray-400">
+                        <li><a href="index.html" class="hover:text-gray-900 dark:hover:text-white transition-colors">Home</a></li>
+                        <li><a href="products.html" class="hover:text-gray-900 dark:hover:text-white transition-colors">Full Catalog</a></li>
+                        <li><a href="cooling-appliances.html" class="hover:text-gray-900 dark:hover:text-white transition-colors">Cooling & AC</a></li>
+                        <li><a href="kitchen-appliances.html" class="text-brand transition-colors">Kitchen</a></li>
+                        <li><a href="wooden-beds.html" class="hover:text-gray-900 dark:hover:text-white transition-colors">Wooden Beds</a></li>
+                        <li><a href="home-lifestyle.html" class="hover:text-gray-900 dark:hover:text-white transition-colors">Cleaning & Lifestyle</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <header class="mb-12 border-b border-gray-200 dark:border-neutral-800 pb-6">
+            <h1 class="text-4xl font-serif font-bold text-gray-900 dark:text-white tracking-wide">Kitchen Appliances</h1>
+            <p class="text-gray-500 mt-2 text-sm">Upgrade your culinary space with advanced technology.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Refrigerators</h3><p class="text-xs text-gray-500 dark:text-gray-400">Single • Double • Side-by-Side</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Ovens</h3><p class="text-xs text-gray-500 dark:text-gray-400">Microwave Oven • OTG</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Grinders</h3><p class="text-xs text-gray-500 dark:text-gray-400">Mixer Grinder • Juicer Mixer</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Stoves</h3><p class="text-xs text-gray-500 dark:text-gray-400">Induction Stove • Gas Stove/Hob</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Breakfast</h3><p class="text-xs text-gray-500 dark:text-gray-400">Sandwich Maker • Toaster</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Preparation</h3><p class="text-xs text-gray-500 dark:text-gray-400">Hand Blender • Food Processor</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Cooking</h3><p class="text-xs text-gray-500 dark:text-gray-400">Rice Cooker • Air Fryer</p></div>
+            <div class="bg-white dark:bg-neutral-900 p-5 rounded-xl border border-gray-200 dark:border-neutral-800 shadow-sm"><h3 class="text-lg font-bold dark:text-brand mb-1">Beverage</h3><p class="text-xs text-gray-500 dark:text-gray-400">Electric Kettle</p></div>
+        </div>
+
+        <section class="bg-brand/10 p-8 rounded-2xl border border-brand/30">
+            <h2 class="text-2xl font-serif font-bold text-gray-900 dark:text-white mb-6 text-center">Authorized Kitchen & Appliance Brands</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">LG</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Samsung</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Whirlpool</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Haier</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Godrej</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Bosch</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">IFB</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Panasonic</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Voltas Beko</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800">Kelvinator</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Philips</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Prestige</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Bajaj</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Havells</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Butterfly</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Pigeon</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Usha</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Morphy Richards</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Preethi</span>
+                <span class="px-4 py-2 bg-white dark:bg-neutral-900 rounded-full font-semibold text-sm shadow-sm border border-gray-200 dark:border-neutral-800 text-brand">Wonderchef</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const t=document.getElementById('theme-toggle'),i=document.getElementById('theme-icon');
+            function u(d){document.documentElement.classList.toggle('dark',d);if(i)i.className=d?'fa-solid fa-sun':'fa-solid fa-moon';}
+            u(localStorage.getItem('color-theme')==='dark'||(!('color-theme' in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches));
+            if(t)t.addEventListener('click',()=>{const d=document.documentElement.classList.contains('dark');localStorage.setItem('color-theme',d?'light':'dark');u(!d);});
+        });
+    </script>
+</body>
+</html>
