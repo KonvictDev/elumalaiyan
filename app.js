@@ -1,27 +1,28 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 2.2 (CORS Protection & Debugging)
+ * Version: 2.5 (Live GitHub Data Integration)
  */
+
+// Your live GitHub data source
+const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
 
 async function productEngine({ category = null, featuredOnly = false, containerId, searchBoxId = null }) {
     const grid = document.getElementById(containerId);
     if (!grid) return;
 
-    grid.innerHTML = `<div class="col-span-full text-center py-10 opacity-50 uppercase tracking-widest text-xs">Loading Catalog...</div>`;
+    // Loading State
+    grid.innerHTML = `<div class="col-span-full text-center py-10 opacity-50 uppercase tracking-widest text-xs">Synchronizing with Catalog...</div>`;
 
     try {
-        // We use an absolute path for local fetching
-        const response = await fetch('./products.json');
+        const response = await fetch(GITHUB_JSON_URL);
         
-        if (!response.ok) {
-            throw new Error(`HTTP Error: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`Network Error: ${response.status}`);
 
         const allProducts = await response.json();
 
         const render = (items) => {
             if (items.length === 0) {
-                grid.innerHTML = `<p class="col-span-full text-center py-10 text-gray-400">No products found.</p>`;
+                grid.innerHTML = `<p class="col-span-full text-center py-10 text-gray-400">No items found in this category.</p>`;
                 return;
             }
             grid.innerHTML = items.map(p => `
@@ -43,6 +44,7 @@ async function productEngine({ category = null, featuredOnly = false, containerI
 
         render(filtered);
 
+        // Search functionality
         if (searchBoxId) {
             const searchInput = document.getElementById(searchBoxId);
             searchInput.addEventListener('input', (e) => {
@@ -57,23 +59,18 @@ async function productEngine({ category = null, featuredOnly = false, containerI
         }
 
     } catch (err) {
-        console.error("CATALOG ERROR:", err);
+        console.error("REMOTE FETCH ERROR:", err);
         grid.innerHTML = `
-            <div class="col-span-full text-center py-10 bg-red-50 dark:bg-red-900/10 rounded-xl border border-red-200 dark:border-red-900/50">
-                <p class="text-red-500 font-bold">Catalog Load Failed</p>
-                <p class="text-xs text-gray-500 mt-2">Error: ${err.message}</p>
-                <div class="mt-6 text-[10px] space-y-2 uppercase tracking-widest">
-                    <p class="text-gray-900 dark:text-white font-bold">Solution:</p>
-                    <p>1. Open VS Code</p>
-                    <p>2. Install "Live Server" Extension</p>
-                    <p>3. Right-click index.html -> "Open with Live Server"</p>
-                </div>
+            <div class="col-span-full text-center py-10 border-2 border-dashed border-red-200 dark:border-red-900/30 rounded-2xl">
+                <p class="text-red-500 font-bold uppercase tracking-widest text-xs">Remote Connection Failed</p>
+                <p class="text-[10px] text-gray-500 mt-2 italic">Error: ${err.message}</p>
             </div>`;
     }
 }
 
 // Global UI Initialization
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Logic
     const t = document.getElementById('theme-toggle');
     const i = document.getElementById('theme-icon');
     if (t && i) {
@@ -85,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             updateIcon(dark);
         };
     }
+
+    // Mobile Navigation Logic
     const mb = document.getElementById('mobile-menu-button');
     const mm = document.getElementById('mobile-menu');
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
