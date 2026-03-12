@@ -17,14 +17,30 @@
     <script>
         tailwind.config = {
             darkMode: 'class',
-            theme: { extend: { colors: { brand: '#D4AF37' }, fontFamily: { sans: ['Inter'], serif: ['Cinzel'] } } }
+            theme: { 
+                extend: { 
+                    colors: { brand: '#D4AF37' }, 
+                    fontFamily: { sans: ['Inter'], serif: ['Cinzel'] } 
+                } 
+            }
         }
     </script>
     <style>
-        .skew-section { transform: skewY(-3deg); }
+        /* The Skew Logic */
+        .skew-section { transform: skewY(-3deg); transform-origin: top left; }
         .skew-reverse { transform: skewY(3deg); }
+        
         #slider-track { transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1); }
         .hero-gradient { background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); }
+        
+        /* Hide scrollbars for the category row */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .category-card { 
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
+            will-change: transform;
+        }
     </style>
 </head>
 <body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-neutral-100 transition-colors duration-500 selection:bg-brand selection:text-black">
@@ -56,7 +72,7 @@
                 <a href="contact.html" class="hidden md:block bg-brand text-black px-10 py-4 rounded-full font-black text-[10px] tracking-widest hover:invert transition-all shadow-xl uppercase">Contact</a>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] bg-white/95 dark:bg-black/95 backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase">
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] bg-white/95 dark:bg-black/95 backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase z-[101]">
             <a href="index.html" class="text-brand">Home</a>
             <a href="products.html">Catalog</a>
             <a href="cooling-appliances.html">Cooling</a>
@@ -67,50 +83,70 @@
     </header>
 
     <main class="pt-48 overflow-hidden">
-        <section class="max-w-7xl mx-auto px-6 mb-40">
-            <div class="relative skew-section bg-neutral-900 h-[550px] md:h-[750px] rounded-[80px] overflow-hidden shadow-2xl">
+        
+        <section class="max-w-7xl mx-auto px-6">
+            <div class="relative skew-section bg-neutral-900 h-[500px] md:h-[700px] rounded-[60px] md:rounded-[100px] overflow-hidden shadow-2xl">
                 <div id="slider-track" class="flex h-full w-full">
                     <div class="hero-slide min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-110 skew-reverse">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-125 skew-reverse">
                         <div class="hero-gradient absolute inset-0"></div>
-                        <div class="relative h-full flex flex-col items-center justify-end pb-24 text-center px-10 skew-reverse">
-                            <h2 class="text-5xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">KITCHEN <br> <span class="text-brand">LEGACY.</span></h2>
+                        <div class="relative h-full flex flex-col items-center justify-end pb-32 text-center px-10 skew-reverse">
+                            <h2 class="text-4xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">KITCHEN <br> <span class="text-brand">LEGACY.</span></h2>
                             <p class="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Authorized Multi-Brand Retailer</p>
                         </div>
                     </div>
-                    <div class="hero-slide min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1527684651001-731c474adfc9?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-110 skew-reverse">
-                        <div class="hero-gradient absolute inset-0"></div>
-                        <div class="relative h-full flex flex-col items-center justify-end pb-24 text-center px-10 skew-reverse">
-                            <h2 class="text-5xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">AIR <br> <span class="text-brand">MASTERY.</span></h2>
-                            <p class="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Next-Gen Cooling Solutions</p>
-                        </div>
-                    </div>
-                    <div class="hero-slide min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-110 skew-reverse">
-                        <div class="hero-gradient absolute inset-0"></div>
-                        <div class="relative h-full flex flex-col items-center justify-end pb-24 text-center px-10 skew-reverse">
-                            <h2 class="text-5xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">TEAK <br> <span class="text-brand">HERITAGE.</span></h2>
-                            <p class="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Solid Wood Signature Collection</p>
-                        </div>
-                    </div>
-                    <div class="hero-slide min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-110 skew-reverse">
-                        <div class="hero-gradient absolute inset-0"></div>
-                        <div class="relative h-full flex flex-col items-center justify-end pb-24 text-center px-10 skew-reverse">
-                            <h2 class="text-5xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">SMART <br> <span class="text-brand">LIVING.</span></h2>
-                            <p class="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">The Evolution of Home Electronics</p>
-                        </div>
-                    </div>
-                    <div class="hero-slide min-w-full h-full relative">
-                        <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-110 skew-reverse">
-                        <div class="hero-gradient absolute inset-0"></div>
-                        <div class="relative h-full flex flex-col items-center justify-end pb-24 text-center px-10 skew-reverse">
-                            <h2 class="text-5xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">GLOBAL <br> <span class="text-brand">BRANDS.</span></h2>
-                            <p class="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Authorized Sales and Service</p>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="max-w-7xl mx-auto px-6 pt-20 pb-24 relative z-10">
+            <div class="flex overflow-x-auto pb-4 md:pb-0 md:grid md:grid-cols-5 gap-6 md:gap-10 no-scrollbar snap-x">
+                
+                <a href="cooling-appliances.html" class="flex-none w-28 md:w-auto group snap-center">
+                    <div class="flex flex-col items-center gap-5">
+                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
+                            <i class="fa-solid fa-snowflake text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Cooling</span>
+                    </div>
+                </a>
+
+                <a href="kitchen-appliances.html" class="flex-none w-28 md:w-auto group snap-center">
+                    <div class="flex flex-col items-center gap-5">
+                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
+                            <i class="fa-solid fa-fire-burner text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Kitchen</span>
+                    </div>
+                </a>
+
+                <a href="wooden-beds.html" class="flex-none w-28 md:w-auto group snap-center">
+                    <div class="flex flex-col items-center gap-5">
+                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
+                            <i class="fa-solid fa-couch text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Furniture</span>
+                    </div>
+                </a>
+
+                <a href="products.html" class="flex-none w-28 md:w-auto group snap-center">
+                    <div class="flex flex-col items-center gap-5">
+                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
+                            <i class="fa-solid fa-tv text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Electronics</span>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="flex-none w-28 md:w-auto group snap-center">
+                    <div class="flex flex-col items-center gap-5">
+                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
+                            <i class="fa-solid fa-screwdriver-wrench text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Support</span>
+                    </div>
+                </a>
+
             </div>
         </section>
 
@@ -146,7 +182,10 @@
             </div>
             <div class="border-t border-neutral-900 pt-12 flex justify-between items-center opacity-40 text-[9px] font-black tracking-[0.6em] uppercase">
                 <p>© 2026 Elumalaiyan Enterprises</p>
-                <div class="flex gap-10"><i class="fa-brands fa-whatsapp text-xl"></i><i class="fa-brands fa-instagram text-xl"></i></div>
+                <div class="flex gap-10">
+                    <i class="fa-brands fa-whatsapp text-xl hover:text-brand cursor-pointer transition-colors"></i>
+                    <i class="fa-brands fa-instagram text-xl hover:text-brand cursor-pointer transition-colors"></i>
+                </div>
             </div>
         </div>
     </footer>
@@ -154,7 +193,27 @@
     <script src="app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            productEngine({ featuredOnly: true, containerId: 'featured-grid' });
+            // Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+            // Sticky Header logic
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('main-nav');
+                if (window.scrollY > 40) {
+                    nav.classList.add('bg-white/80', 'dark:bg-black/80', 'backdrop-blur-xl', 'py-4', 'shadow-lg');
+                    nav.classList.remove('py-8');
+                } else {
+                    nav.classList.remove('bg-white/80', 'dark:bg-black/80', 'backdrop-blur-xl', 'py-4', 'shadow-lg');
+                    nav.classList.add('py-8');
+                }
+            });
+
+            // Product Engine Init
+            if (typeof productEngine === 'function') {
+                productEngine({ featuredOnly: true, containerId: 'featured-grid' });
+            }
         });
     </script>
 </body>
