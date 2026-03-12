@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "LG Dual Inverter AC",
+    "category": "cooling",
+    "description": "Energy-efficient split AC with copper condenser and AI cooling.",
+    "brands": "LG, Samsung, Daikin, Hitachi",
+    "image": "https://images.unsplash.com/photo-1527684651001-731c474adfc9?auto=format&fit=crop&w=400",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Samsung Double Door Fridge",
+    "category": "kitchen",
+    "description": "Convertible 5-in-1 digital inverter refrigerator with twin cooling.",
+    "brands": "Samsung, LG, Whirlpool",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Teak Wood King Size Bed",
+    "category": "beds",
+    "description": "Solid teak wood with hydraulic lift storage and premium finish.",
+    "brands": "Signature Collection",
+    "image": "https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=400",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Philips 750W Mixer",
+    "category": "kitchen",
+    "description": "Heavy-duty motor with 3 stainless steel jars for tough grinding.",
+    "brands": "Philips, Bosch, Preethi, Butterfly",
+    "image": "https://images.unsplash.com/photo-1585659722983-3a6750f2fd82?auto=format&fit=crop&w=400",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Symphony Tower Cooler",
+    "category": "cooling",
+    "description": "Space-saving air cooler with honeycomb pads for superior cooling.",
+    "brands": "Symphony, Bajaj, Kenstar",
+    "image": "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Bosch Front Load Machine",
+    "category": "lifestyle",
+    "description": "8kg fully automatic with i-DOS system and eco-silent drive.",
+    "brands": "Bosch, LG, IFB, Samsung",
+    "image": "https://images.unsplash.com/photo-1626806787426-5910811b6325?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "Traditional Rosewood Bed",
+    "category": "beds",
+    "description": "Handcrafted traditional rosewood bed frame with intricate carving.",
+    "brands": "Signature Collection",
+    "image": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600",
+    "featured": false
+  }
+]
