@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://elumalaiyan.in/</loc>
-      <lastmod>2026-03-08</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>1.0</priority>
-   </url>
-   <url>
-      <loc>https://elumalaiyan.in/products.html</loc>
-      <lastmod>2026-03-08</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.9</priority>
-   </url>
-   <url>
-      <loc>https://elumalaiyan.in/contact.html</loc>
-      <lastmod>2026-03-08</lastmod>
-      <changefreq>monthly</changefreq>
-      <priority>0.8</priority>
-   </url>
+    <url>
+        <loc>https://elumalaiyanenterprises.com/</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://elumalaiyanenterprises.com/products.html</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://elumalaiyanenterprises.com/cooling-appliances.html</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://elumalaiyanenterprises.com/kitchen-appliances.html</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://elumalaiyanenterprises.com/wooden-beds.html</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://elumalaiyanenterprises.com/home-lifestyle.html</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://elumalaiyanenterprises.com/contact.html</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
