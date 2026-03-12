@@ -1,6 +1,6 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 3.1 (Glassmorphism & Skew UI Logic)
+ * Version: 3.2 (Unified Header/Footer & Skew UI)
  */
 
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
@@ -9,7 +9,6 @@ async function productEngine({ category = null, featuredOnly = false, containerI
     const grid = document.getElementById(containerId);
     if (!grid) return;
 
-    // High-end Loader
     grid.innerHTML = `
         <div class="col-span-full flex flex-col items-center py-20 opacity-40">
             <div class="w-12 h-12 border-2 border-brand border-t-transparent rounded-full animate-spin mb-4"></div>
@@ -30,7 +29,6 @@ async function productEngine({ category = null, featuredOnly = false, containerI
                 <article class="group relative bg-white/50 dark:bg-neutral-900/30 backdrop-blur-md rounded-[2.5rem] p-6 border border-white/20 dark:border-white/5 hover:border-brand/50 transition-all duration-700 shadow-xl hover:-translate-y-4">
                     <div class="h-60 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-neutral-800 dark:to-neutral-900 rounded-[2rem] mb-6 overflow-hidden flex items-center justify-center p-8 relative">
                         <img src="${p.image}" alt="${p.name}" loading="lazy" class="max-h-full object-contain group-hover:scale-110 group-hover:rotate-6 transition-transform duration-1000">
-                        <div class="absolute inset-0 bg-brand/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="space-y-3 px-2">
                         <div class="flex items-center gap-2">
@@ -40,10 +38,7 @@ async function productEngine({ category = null, featuredOnly = false, containerI
                         <h3 class="font-serif text-xl font-black text-gray-900 dark:text-white leading-tight uppercase tracking-tighter">${p.name}</h3>
                         <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-[0.15em]">${p.brands}</p>
                     </div>
-                    <a href="https://wa.me/919876543210?text=I'm inquiring about the ${p.name}" 
-                       class="mt-8 flex items-center justify-center gap-3 w-full bg-neutral-900 dark:bg-white text-white dark:text-black py-5 rounded-2xl font-black text-[10px] tracking-[0.3em] hover:bg-brand hover:text-black transition-all transform active:scale-95 shadow-lg">
-                       INQUIRE PRICE
-                    </a>
+                    <a href="https://wa.me/919876543210?text=Inquiry: ${p.name}" class="mt-8 flex items-center justify-center gap-3 w-full bg-neutral-900 dark:bg-white text-white dark:text-black py-5 rounded-2xl font-black text-[10px] tracking-[0.3em] hover:bg-brand hover:text-black transition-all shadow-lg">INQUIRE PRICE</a>
                 </article>
             `).join('');
         };
@@ -61,13 +56,11 @@ async function productEngine({ category = null, featuredOnly = false, containerI
             });
         }
     } catch (err) {
-        grid.innerHTML = `<div class="col-span-full text-center py-20 text-red-500 font-black tracking-widest text-xs">CATALOG_SYNC_ERROR: ${err.message}</div>`;
+        grid.innerHTML = `<div class="col-span-full text-center py-20 text-red-500 font-black tracking-widest text-xs tracking-widest">SYNC_ERROR</div>`;
     }
 }
 
-// Global UI Logic
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation Glassmorphism
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('main-nav');
         if (window.scrollY > 50) {
@@ -79,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Theme Engine
     const t = document.getElementById('theme-toggle'), i = document.getElementById('theme-icon');
     if (t && i) {
         const update = (dark) => { i.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; };
@@ -91,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // Mobile Navigation
     const mb = document.getElementById('mobile-menu-button'), mm = document.getElementById('mobile-menu');
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
 });
