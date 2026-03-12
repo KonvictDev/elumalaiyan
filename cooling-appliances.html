@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Cooling Solutions | Elumalaiyan</title>
+    <title>Cooling | Elumalaiyan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -10,17 +10,23 @@
         if (localStorage.getItem('color-theme') === 'dark') document.documentElement.classList.add('dark');
     </script>
 </head>
-<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-white">
-    <header class="p-8 border-b dark:border-neutral-900 flex justify-between items-center sticky top-0 bg-white/70 dark:bg-black/70 backdrop-blur-3xl z-50">
-        <a href="index.html" class="font-black tracking-[0.3em] text-xs uppercase">Cooling <span class="text-brand">Solutions</span></a>
-        <button id="theme-toggle" class="p-2 border rounded-full w-10 h-10"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
-    </nav>
-    
-    <main class="max-w-7xl mx-auto px-6 py-24">
-        <h1 class="text-6xl font-black tracking-tighter uppercase mb-12">Air Conditioning <br> <span class="text-brand opacity-40">& Refrigeration</span></h1>
+<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-white transition-colors duration-500">
+    <header id="main-nav" class="fixed top-0 inset-x-0 z-[100] transition-all duration-700 py-8 bg-white/70 dark:bg-black/70 backdrop-blur-2xl border-b dark:border-neutral-900">
+        <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center uppercase text-[10px] font-black tracking-[0.3em]">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <img src="logo.jpeg" alt="Logo" class="h-10 rounded-lg group-hover:scale-110">
+                <span class="text-brand">Cooling Range</span>
+            </a>
+            <div class="flex gap-6 items-center">
+                <button id="theme-toggle" class="p-2 border rounded-full w-10 h-10"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+                <a href="index.html" class="border-b border-brand">Home</a>
+            </div>
+        </nav>
+    </header>
+    <main class="max-w-7xl mx-auto px-6 py-48">
+        <h1 class="text-6xl font-black tracking-tighter uppercase mb-20 leading-none">Air <br> <span class="text-brand opacity-40">Solutions</span></h1>
         <div id="cooling-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></div>
     </main>
-
     <script src="app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
