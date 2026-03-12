@@ -41,11 +41,28 @@
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); 
             will-change: transform;
         }
+        
+        /* Indicator Transitions */
+        .slider-indicator { transition: all 0.4s ease; }
+
+        /* Liquid Glass (Glassmorphism) Utilities */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+        .dark .liquid-glass {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
-<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-neutral-100 transition-colors duration-500 selection:bg-brand selection:text-black">
+<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-neutral-100 transition-colors duration-500 selection:bg-brand selection:text-black relative">
 
-    <header id="main-nav" class="fixed top-0 inset-x-0 z-[100] transition-all duration-700 py-8">
+    <header id="main-nav" class="fixed top-0 inset-x-0 z-[100] transition-all duration-700 py-8 border-b border-transparent">
         <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <div class="flex items-center gap-8">
                 <button id="mobile-menu-button" class="lg:hidden text-2xl"><i class="fa-solid fa-bars-staggered"></i></button>
@@ -66,13 +83,14 @@
                 <a href="wooden-beds.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Furniture</a>
             </div>
             <div class="flex items-center gap-6">
-                <button id="theme-toggle" class="w-12 h-12 flex items-center justify-center rounded-full border border-neutral-200 dark:border-neutral-800 hover:border-brand transition-all">
+                <button id="theme-toggle" class="w-12 h-12 flex items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-brand transition-all liquid-glass">
                     <i id="theme-icon" class="fa-solid fa-moon"></i>
                 </button>
                 <a href="contact.html" class="hidden md:block bg-brand text-black px-10 py-4 rounded-full font-black text-[10px] tracking-widest hover:invert transition-all shadow-xl uppercase">Contact</a>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] bg-white/95 dark:bg-black/95 backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase z-[101]">
+        
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] liquid-glass backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase z-[101]">
             <a href="index.html" class="text-brand">Home</a>
             <a href="products.html">Catalog</a>
             <a href="cooling-appliances.html">Cooling</a>
@@ -82,66 +100,114 @@
         </div>
     </header>
 
-    <main class="pt-48 overflow-hidden">
+    <main class="pt-32 md:pt-40 overflow-hidden">
         
         <section class="max-w-7xl mx-auto px-6">
-            <div class="relative skew-section bg-neutral-900 h-[500px] md:h-[700px] rounded-[60px] md:rounded-[100px] overflow-hidden shadow-2xl">
+            <div class="relative skew-section bg-neutral-900 h-[400px] md:h-[500px] lg:h-[550px] rounded-[40px] md:rounded-[80px] overflow-hidden shadow-2xl">
                 <div id="slider-track" class="flex h-full w-full">
+                    
                     <div class="hero-slide min-w-full h-full relative">
                         <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-125 skew-reverse">
                         <div class="hero-gradient absolute inset-0"></div>
-                        <div class="relative h-full flex flex-col items-center justify-end pb-32 text-center px-10 skew-reverse">
-                            <h2 class="text-4xl md:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">KITCHEN <br> <span class="text-brand">LEGACY.</span></h2>
-                            <p class="text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Authorized Multi-Brand Retailer</p>
+                        <div class="relative h-full flex flex-col items-center justify-end pb-24 md:pb-32 text-center px-10 skew-reverse">
+                            <h2 class="text-4xl md:text-7xl lg:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">KITCHEN <br> <span class="text-brand">LEGACY.</span></h2>
+                            <p class="text-[9px] md:text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Authorized Multi-Brand Retailer</p>
                         </div>
                     </div>
+
+                    <div class="hero-slide min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-125 skew-reverse">
+                        <div class="hero-gradient absolute inset-0"></div>
+                        <div class="relative h-full flex flex-col items-center justify-end pb-24 md:pb-32 text-center px-10 skew-reverse">
+                            <h2 class="text-4xl md:text-7xl lg:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">ULTIMATE <br> <span class="text-brand">COOLING.</span></h2>
+                            <p class="text-[9px] md:text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Beat the Heat with Premium ACs</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-125 skew-reverse">
+                        <div class="hero-gradient absolute inset-0"></div>
+                        <div class="relative h-full flex flex-col items-center justify-end pb-24 md:pb-32 text-center px-10 skew-reverse">
+                            <h2 class="text-4xl md:text-7xl lg:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">HERITAGE <br> <span class="text-brand">WOOD.</span></h2>
+                            <p class="text-[9px] md:text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Timeless Furniture Collection</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-125 skew-reverse">
+                        <div class="hero-gradient absolute inset-0"></div>
+                        <div class="relative h-full flex flex-col items-center justify-end pb-24 md:pb-32 text-center px-10 skew-reverse">
+                            <h2 class="text-4xl md:text-7xl lg:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">MODERN <br> <span class="text-brand">LIVING.</span></h2>
+                            <p class="text-[9px] md:text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Next-Gen Home Electronics</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-slide min-w-full h-full relative">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1920" class="absolute inset-0 w-full h-full object-cover opacity-60 scale-125 skew-reverse">
+                        <div class="hero-gradient absolute inset-0"></div>
+                        <div class="relative h-full flex flex-col items-center justify-end pb-24 md:pb-32 text-center px-10 skew-reverse">
+                            <h2 class="text-4xl md:text-7xl lg:text-8xl font-serif font-black text-white leading-none mb-4 uppercase">DEDICATED <br> <span class="text-brand">SUPPORT.</span></h2>
+                            <p class="text-[9px] md:text-[10px] font-black tracking-[0.5em] text-white/50 uppercase">Expert Service & Maintenance</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20 skew-reverse">
+                    <button class="slider-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer"></button>
+                    <button class="slider-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer"></button>
+                    <button class="slider-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer"></button>
+                    <button class="slider-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer"></button>
+                    <button class="slider-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white cursor-pointer"></button>
                 </div>
             </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6 pt-20 pb-24 relative z-10">
+        <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-24 relative z-10">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[200px] bg-brand/10 dark:bg-brand/15 rounded-[100%] blur-[60px] md:blur-[80px] -z-10 pointer-events-none"></div>
+
             <div class="flex overflow-x-auto pb-4 md:pb-0 md:grid md:grid-cols-5 gap-6 md:gap-10 no-scrollbar snap-x">
                 
-                <a href="cooling-appliances.html" class="flex-none w-28 md:w-auto group snap-center">
+                <a href="cooling-appliances.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
-                            <i class="fa-solid fa-snowflake text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                            <i class="fa-solid fa-snowflake text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
                         <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Cooling</span>
                     </div>
                 </a>
 
-                <a href="kitchen-appliances.html" class="flex-none w-28 md:w-auto group snap-center">
+                <a href="kitchen-appliances.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
-                            <i class="fa-solid fa-fire-burner text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                            <i class="fa-solid fa-fire-burner text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
                         <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Kitchen</span>
                     </div>
                 </a>
 
-                <a href="wooden-beds.html" class="flex-none w-28 md:w-auto group snap-center">
+                <a href="wooden-beds.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
-                            <i class="fa-solid fa-couch text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                            <i class="fa-solid fa-couch text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
                         <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Furniture</span>
                     </div>
                 </a>
 
-                <a href="products.html" class="flex-none w-28 md:w-auto group snap-center">
+                <a href="products.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
-                            <i class="fa-solid fa-tv text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                            <i class="fa-solid fa-tv text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
                         <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Electronics</span>
                     </div>
                 </a>
 
-                <a href="contact.html" class="flex-none w-28 md:w-auto group snap-center">
+                <a href="contact.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card w-20 h-20 md:w-32 md:h-32 rounded-full bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 flex items-center justify-center text-2xl md:text-4xl shadow-lg group-hover:border-brand group-hover:-translate-y-3 group-hover:shadow-xl group-hover:shadow-brand/20">
-                            <i class="fa-solid fa-screwdriver-wrench text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                            <i class="fa-solid fa-screwdriver-wrench text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
                         <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Support</span>
                     </div>
@@ -198,17 +264,93 @@
             const menu = document.getElementById('mobile-menu');
             btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-            // Sticky Header logic
+            // Sticky Header logic with Liquid Glass
             window.addEventListener('scroll', () => {
                 const nav = document.getElementById('main-nav');
                 if (window.scrollY > 40) {
-                    nav.classList.add('bg-white/80', 'dark:bg-black/80', 'backdrop-blur-xl', 'py-4', 'shadow-lg');
+                    nav.classList.add('liquid-glass', 'py-4');
                     nav.classList.remove('py-8');
                 } else {
-                    nav.classList.remove('bg-white/80', 'dark:bg-black/80', 'backdrop-blur-xl', 'py-4', 'shadow-lg');
+                    nav.classList.remove('liquid-glass', 'py-4');
                     nav.classList.add('py-8');
                 }
             });
+
+            // Hero Slider Logic with Indicators & Touch Swipe
+            const track = document.getElementById('slider-track');
+            const slides = document.querySelectorAll('.hero-slide');
+            const indicators = document.querySelectorAll('.slider-indicator');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let slideInterval;
+            
+            // Touch variables
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const swipeThreshold = 50;
+
+            function updateSlider(index) {
+                currentSlide = index;
+                track.style.transform = `translateX(-${currentSlide * 100}%)`;
+                
+                // Update indicator styles
+                indicators.forEach((ind, i) => {
+                    if (i === currentSlide) {
+                        ind.classList.remove('bg-white/50', 'w-3');
+                        ind.classList.add('bg-brand', 'w-8');
+                    } else {
+                        ind.classList.add('bg-white/50', 'w-3');
+                        ind.classList.remove('bg-brand', 'w-8');
+                    }
+                });
+            }
+
+            function startSlider() {
+                slideInterval = setInterval(() => {
+                    updateSlider((currentSlide + 1) % totalSlides);
+                }, 5000);
+            }
+
+            function resetSlider() {
+                clearInterval(slideInterval);
+                startSlider();
+            }
+
+            // Indicator Click Events
+            indicators.forEach((ind, i) => {
+                ind.addEventListener('click', () => {
+                    updateSlider(i);
+                    resetSlider();
+                });
+            });
+
+            // Touch Swipe Events
+            track.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                if (touchStartX - touchEndX > swipeThreshold) {
+                    // Swiped left (Next Slide)
+                    updateSlider((currentSlide + 1) % totalSlides);
+                    resetSlider();
+                } else if (touchEndX - touchStartX > swipeThreshold) {
+                    // Swiped right (Previous Slide)
+                    updateSlider((currentSlide - 1 + totalSlides) % totalSlides);
+                    resetSlider();
+                }
+            }
+
+            // Initialize Slider
+            if (totalSlides > 1) {
+                updateSlider(0); // Set initial state
+                startSlider();
+            }
 
             // Product Engine Init
             if (typeof productEngine === 'function') {
@@ -216,6 +358,5 @@
             }
         });
     </script>
-    
 </body>
 </html>
