@@ -11,7 +11,7 @@
         tailwind.config = { darkMode: 'class', theme: { extend: { colors: { brand: '#D4AF37' }, fontFamily: { sans: ['Inter'], serif: ['Cinzel'] } } } }
     </script>
 </head>
-<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-white transition-colors duration-500">
+<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-white transition-colors duration-500 selection:bg-brand selection:text-black">
 
     <header id="main-nav" class="fixed top-0 inset-x-0 z-[100] transition-all duration-700 py-8 bg-white/70 dark:bg-black/70 backdrop-blur-2xl border-b dark:border-neutral-900">
         <nav class="max-w-7xl mx-auto px-6 flex justify-between items-center uppercase text-[10px] font-black tracking-[0.3em]">
@@ -20,7 +20,7 @@
                 <span class="text-brand">Global Catalog</span>
             </a>
             <div class="flex gap-6 items-center">
-                <button id="theme-toggle" class="p-2 border rounded-full w-10 h-10"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+                <button id="theme-toggle" class="p-2 border rounded-full w-10 h-10 flex items-center justify-center"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
                 <a href="index.html" class="border-b border-brand">Home</a>
             </div>
         </nav>
@@ -28,7 +28,7 @@
 
     <main class="pt-48 pb-40 max-w-7xl mx-auto px-6">
         <div class="mb-24 space-y-12">
-            <h1 class="text-6xl md:text-8xl font-serif font-black tracking-tighter uppercase leading-none mt-4 text-center">The <br> <span class="text-brand opacity-40 italic">Catalog</span></h1>
+            <h1 class="text-6xl md:text-8xl font-serif font-black tracking-tighter uppercase leading-none text-center">The <br> <span class="text-brand opacity-40 italic">Catalog</span></h1>
             <div class="relative max-w-2xl mx-auto">
                 <input type="text" id="catalog-search" placeholder="SEARCH BRANDS OR PRODUCTS..." class="w-full bg-white/40 dark:bg-neutral-900/40 backdrop-blur-xl border border-white/20 dark:border-white/5 p-8 rounded-3xl font-black text-xs tracking-widest outline-none focus:ring-2 ring-brand shadow-2xl transition-all">
                 <i class="fa-solid fa-magnifying-glass absolute right-8 top-1/2 -translate-y-1/2 opacity-20"></i>
