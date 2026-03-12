@@ -1,6 +1,6 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 3.2 (Unified Header/Footer & Skew UI)
+ * Version: 3.3 (Live GitHub Data Sync & Unified UI)
  */
 
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
@@ -9,6 +9,7 @@ async function productEngine({ category = null, featuredOnly = false, containerI
     const grid = document.getElementById(containerId);
     if (!grid) return;
 
+    // Premium Skeleton Loader
     grid.innerHTML = `
         <div class="col-span-full flex flex-col items-center py-20 opacity-40">
             <div class="w-12 h-12 border-2 border-brand border-t-transparent rounded-full animate-spin mb-4"></div>
@@ -38,7 +39,7 @@ async function productEngine({ category = null, featuredOnly = false, containerI
                         <h3 class="font-serif text-xl font-black text-gray-900 dark:text-white leading-tight uppercase tracking-tighter">${p.name}</h3>
                         <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-[0.15em]">${p.brands}</p>
                     </div>
-                    <a href="https://wa.me/919876543210?text=Inquiry: ${p.name}" class="mt-8 flex items-center justify-center gap-3 w-full bg-neutral-900 dark:bg-white text-white dark:text-black py-5 rounded-2xl font-black text-[10px] tracking-[0.3em] hover:bg-brand hover:text-black transition-all shadow-lg">INQUIRE PRICE</a>
+                    <a href="https://wa.me/919876543210?text=Inquiry: ${encodeURIComponent(p.name)}" class="mt-8 flex items-center justify-center gap-3 w-full bg-neutral-900 dark:bg-white text-white dark:text-black py-5 rounded-2xl font-black text-[10px] tracking-[0.3em] hover:bg-brand hover:text-black transition-all shadow-lg">INQUIRE PRICE</a>
                 </article>
             `).join('');
         };
@@ -56,11 +57,13 @@ async function productEngine({ category = null, featuredOnly = false, containerI
             });
         }
     } catch (err) {
-        grid.innerHTML = `<div class="col-span-full text-center py-20 text-red-500 font-black tracking-widest text-xs tracking-widest">SYNC_ERROR</div>`;
+        console.error("SYNC_ERROR:", err);
+        grid.innerHTML = `<div class="col-span-full text-center py-20 text-red-500 font-black tracking-widest text-xs uppercase">Catalog Sync Error</div>`;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Nav Glassmorphism Scroll
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('main-nav');
         if (window.scrollY > 50) {
@@ -72,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Unified Theme Toggle
     const t = document.getElementById('theme-toggle'), i = document.getElementById('theme-icon');
     if (t && i) {
         const update = (dark) => { i.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; };
@@ -83,6 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    // Unified Mobile Menu
     const mb = document.getElementById('mobile-menu-button'), mm = document.getElementById('mobile-menu');
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
 });
