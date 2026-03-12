@@ -64,7 +64,7 @@
   },
   {
     "id": 12,
-    "name": "Sony Bravia 55\" 4K Smart TV",
+    "name": "Sony Bravia 55 4K Smart TV",
     "category": "lifestyle",
     "description": "Ultra HD LED Google TV with Dolby Vision and X1 4K HDR Processor.",
     "brands": "Sony, Samsung, LG, TCL",
@@ -134,4 +134,5 @@
     "image": "https://images.unsplash.com/photo-1595514535128-4ce312bba71e?auto=format&fit=crop&w=400",
     "featured": false
   }
+
 ]
