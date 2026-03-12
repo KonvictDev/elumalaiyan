@@ -110,4 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
 
     initHeroSlider();
+    
 });
+
