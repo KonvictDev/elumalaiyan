@@ -1,6 +1,6 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 3.6 (Liquid Glass & Edge-to-Edge Images)
+ * Version: 3.7 (Liquid Glass, Edge-to-Edge Images & Cache Busting)
  */
 
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
@@ -35,7 +35,10 @@ async function productEngine({ category = null, featuredOnly = false, containerI
         </div>`;
 
     try {
-        const response = await fetch(GITHUB_JSON_URL);
+        // CACHE BUSTING ADDED HERE: Appends a unique timestamp to the URL so GitHub/Browser always serves fresh data
+        const cacheBusterUrl = `${GITHUB_JSON_URL}?t=${new Date().getTime()}`;
+        const response = await fetch(cacheBusterUrl, { cache: 'no-store' });
+        
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const allProducts = await response.json();
 
