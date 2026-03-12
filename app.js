@@ -1,6 +1,6 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 3.5 (5-Slide Hero & Unified UI Architect)
+ * Version: 3.6 (Liquid Glass & Edge-to-Edge Images)
  */
 
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
@@ -45,25 +45,34 @@ async function productEngine({ category = null, featuredOnly = false, containerI
                 return;
             }
             grid.innerHTML = items.map(p => `
-                <article class="group relative bg-white/50 dark:bg-neutral-900/30 backdrop-blur-xl rounded-[2.5rem] p-6 border border-white/20 dark:border-white/5 hover:border-brand/50 transition-all duration-700 shadow-2xl hover:-translate-y-4">
-                    <div class="h-64 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-neutral-800 dark:to-neutral-900 rounded-[2rem] mb-6 overflow-hidden flex items-center justify-center p-8 relative">
-                        <img src="${p.image}" alt="${p.name}" loading="lazy" class="max-h-full object-contain group-hover:scale-110 group-hover:rotate-6 transition-transform duration-1000">
-                    </div>
-                    <div class="space-y-3 px-2">
-                        <div class="flex items-center gap-2">
+                <article class="group liquid-glass rounded-[40px] p-4 border border-white/40 dark:border-white/10 hover:-translate-y-2 transition-all duration-500 flex flex-col relative z-10 shadow-2xl">
+                    
+                    <div class="relative w-full h-64 md:h-72 rounded-[32px] overflow-hidden mb-6 bg-neutral-200 dark:bg-neutral-800">
+                        <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        
+                        <div class="absolute top-4 left-4 bg-black/40 backdrop-blur-md text-white px-4 py-2 rounded-full text-[9px] font-black tracking-widest uppercase border border-white/20 flex items-center gap-2">
                             <span class="w-1.5 h-1.5 bg-brand rounded-full animate-pulse"></span>
-                            <span class="text-[9px] uppercase font-black text-brand tracking-[0.3em]">${p.category}</span>
+                            ${p.category}
                         </div>
-                        <h3 class="font-serif text-xl font-black text-gray-900 dark:text-white leading-tight uppercase tracking-tighter">${p.name}</h3>
-                        <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-[0.15em]">${p.brands}</p>
                     </div>
-                    <a href="https://wa.me/919876543210?text=Inquiry: ${encodeURIComponent(p.name)}" class="mt-8 flex items-center justify-center gap-3 w-full bg-neutral-900 dark:bg-white text-white dark:text-black py-5 rounded-2xl font-black text-[10px] tracking-[0.4em] hover:bg-brand hover:text-black transition-all shadow-xl">INQUIRE PRICE</a>
+                    
+                    <div class="px-2 pb-2 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-serif text-xl md:text-2xl font-black text-gray-900 dark:text-white leading-tight uppercase tracking-tighter mb-2">${p.name}</h3>
+                            <p class="text-[10px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-[0.15em] mb-6">${p.brands}</p>
+                        </div>
+                        
+                        <a href="https://wa.me/919876543210?text=Inquiry: ${encodeURIComponent(p.name)}" class="mt-auto flex items-center justify-between w-full bg-neutral-900 dark:bg-white text-white dark:text-black px-6 py-4 rounded-3xl font-black text-[10px] tracking-[0.4em] hover:bg-brand hover:text-black transition-all shadow-xl group/btn">
+                            <span>INQUIRE</span>
+                            <i class="fa-solid fa-arrow-right -rotate-45 group-hover/btn:rotate-0 transition-transform duration-300 text-sm"></i>
+                        </a>
+                    </div>
                 </article>
             `).join('');
         };
 
         let filtered = allProducts;
-        if (category) filtered = filtered.filter(p => p.category === category);
+        if (category) filtered = filtered.filter(p => p.category.toLowerCase() === category.toLowerCase());
         if (featuredOnly) filtered = filtered.filter(p => p.featured === true);
 
         render(filtered);
@@ -85,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('main-nav');
         if (window.scrollY > 50) {
-            nav.classList.add('py-4', 'bg-white/70', 'dark:bg-black/70', 'backdrop-blur-2xl', 'shadow-2xl');
+            nav.classList.add('liquid-glass', 'py-4', 'shadow-2xl');
             nav.classList.remove('py-8');
         } else {
-            nav.classList.remove('py-4', 'bg-white/70', 'dark:bg-black/70', 'backdrop-blur-2xl', 'shadow-2xl');
+            nav.classList.remove('liquid-glass', 'py-4', 'shadow-2xl');
             nav.classList.add('py-8');
         }
     });
@@ -110,6 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
 
     initHeroSlider();
-    
 });
-

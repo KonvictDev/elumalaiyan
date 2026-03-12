@@ -61,5 +61,77 @@
     "brands": "Signature Collection",
     "image": "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=600",
     "featured": false
+  },
+  {
+    "id": 12,
+    "name": "Sony Bravia 55\" 4K Smart TV",
+    "category": "lifestyle",
+    "description": "Ultra HD LED Google TV with Dolby Vision and X1 4K HDR Processor.",
+    "brands": "Sony, Samsung, LG, TCL",
+    "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=400",
+    "featured": true
+  },
+  {
+    "id": 13,
+    "name": "Voltas 1.5 Ton Split AC",
+    "category": "cooling",
+    "description": "High ambient cooling with active dehumidifier and multi-stage air filtration.",
+    "brands": "Voltas, Blue Star, Carrier",
+    "image": "https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "name": "IFB 30L Convection Microwave",
+    "category": "kitchen",
+    "description": "Multi-stage cooking, auto-cook menus, and steam clean technology.",
+    "brands": "IFB, Samsung, LG, Panasonic",
+    "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?auto=format&fit=crop&w=400",
+    "featured": true
+  },
+  {
+    "id": 15,
+    "name": "Prestige Edge Glass Gas Stove",
+    "category": "kitchen",
+    "description": "Ultra-slim design with Schott glass and jumbo brass burners.",
+    "brands": "Prestige, Pigeon, Sunflame",
+    "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 16,
+    "name": "Dyson V12 Detect Slim",
+    "category": "lifestyle",
+    "description": "Cordless vacuum cleaner with laser illumination and advanced HEPA filtration.",
+    "brands": "Dyson, Philips, Eureka Forbes",
+    "image": "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 17,
+    "name": "Premium Sheesham Wood Bed",
+    "category": "beds",
+    "description": "Queen size solid wood bed with box storage and rich walnut finish.",
+    "brands": "Signature Collection",
+    "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 18,
+    "name": "Butterfly Smart Wet Grinder",
+    "category": "kitchen",
+    "description": "2L table top wet grinder with coconut scraper and atta kneader attachments.",
+    "brands": "Butterfly, Elgi Ultra, Preethi",
+    "image": "https://images.unsplash.com/photo-1584269600519-112d071b4d16?auto=format&fit=crop&w=400",
+    "featured": false
+  },
+  {
+    "id": 19,
+    "name": "Bajaj 65L Desert Cooler",
+    "category": "cooling",
+    "description": "High air delivery cooler with Hexacool technology and built-in ice chamber.",
+    "brands": "Bajaj, Symphony, Crompton",
+    "image": "https://images.unsplash.com/photo-1595514535128-4ce312bba71e?auto=format&fit=crop&w=400",
+    "featured": false
   }
 ]

@@ -74,13 +74,14 @@
                     </div>
                 </a>
             </div>
-            <div class="hidden lg:flex items-center gap-10">
+            <div class="hidden lg:flex items-center gap-6 xl:gap-10">
                 <a href="index.html" class="text-[10px] font-black tracking-[0.25em] text-brand uppercase">Home</a>
                 <a href="products.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Catalog</a>
                 <div class="h-4 w-[1px] bg-neutral-200 dark:bg-neutral-800"></div>
                 <a href="cooling-appliances.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Cooling</a>
                 <a href="kitchen-appliances.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Kitchen</a>
                 <a href="wooden-beds.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Furniture</a>
+                <a href="home-lifestyle.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Lifestyle</a>
             </div>
             <div class="flex items-center gap-6">
                 <button id="theme-toggle" class="w-12 h-12 flex items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-brand transition-all liquid-glass">
@@ -90,12 +91,13 @@
             </div>
         </nav>
         
-        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] liquid-glass backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase z-[101]">
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] liquid-glass backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase z-[101] overflow-y-auto">
             <a href="index.html" class="text-brand">Home</a>
             <a href="products.html">Catalog</a>
             <a href="cooling-appliances.html">Cooling</a>
             <a href="kitchen-appliances.html">Kitchen</a>
             <a href="wooden-beds.html">Furniture</a>
+            <a href="home-lifestyle.html">Lifestyle</a>
             <a href="contact.html">Contact</a>
         </div>
     </header>
@@ -166,50 +168,59 @@
         <section class="max-w-7xl mx-auto px-6 pt-16 md:pt-20 pb-24 relative z-10">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[200px] bg-brand/10 dark:bg-brand/15 rounded-[100%] blur-[60px] md:blur-[80px] -z-10 pointer-events-none"></div>
 
-            <div class="flex overflow-x-auto pb-4 md:pb-0 md:grid md:grid-cols-5 gap-6 md:gap-10 no-scrollbar snap-x">
+            <div class="flex overflow-x-auto pb-4 md:pb-0 md:grid md:grid-cols-6 gap-6 md:gap-8 no-scrollbar snap-x">
                 
-                <a href="cooling-appliances.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
+                <a href="cooling-appliances.html" class="flex-none w-24 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center text-xl md:text-3xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
                             <i class="fa-solid fa-snowflake text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
-                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Cooling</span>
+                        <span class="text-[9px] font-black tracking-[0.2em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Cooling</span>
                     </div>
                 </a>
 
-                <a href="kitchen-appliances.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
+                <a href="kitchen-appliances.html" class="flex-none w-24 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center text-xl md:text-3xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
                             <i class="fa-solid fa-fire-burner text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
-                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Kitchen</span>
+                        <span class="text-[9px] font-black tracking-[0.2em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Kitchen</span>
                     </div>
                 </a>
 
-                <a href="wooden-beds.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
+                <a href="wooden-beds.html" class="flex-none w-24 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center text-xl md:text-3xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
                             <i class="fa-solid fa-couch text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
-                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Furniture</span>
+                        <span class="text-[9px] font-black tracking-[0.2em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Furniture</span>
                     </div>
                 </a>
 
-                <a href="products.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
+                <a href="products.html" class="flex-none w-24 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center text-xl md:text-3xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
                             <i class="fa-solid fa-tv text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
-                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Electronics</span>
+                        <span class="text-[9px] font-black tracking-[0.2em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Electronics</span>
                     </div>
                 </a>
 
-                <a href="contact.html" class="flex-none w-28 md:w-auto group snap-center relative hover:z-10">
+                <a href="home-lifestyle.html" class="flex-none w-24 md:w-auto group snap-center relative hover:z-10">
                     <div class="flex flex-col items-center gap-5">
-                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-32 md:h-32 rounded-full flex items-center justify-center text-2xl md:text-4xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center text-xl md:text-3xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
+                            <i class="fa-solid fa-gem text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
+                        </div>
+                        <span class="text-[9px] font-black tracking-[0.2em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Lifestyle</span>
+                    </div>
+                </a>
+
+                <a href="contact.html" class="flex-none w-24 md:w-auto group snap-center relative hover:z-10">
+                    <div class="flex flex-col items-center gap-5">
+                        <div class="category-card liquid-glass border border-white/40 dark:border-white/10 w-20 h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center text-xl md:text-3xl group-hover:border-brand group-hover:shadow-brand/20 transition-colors">
                             <i class="fa-solid fa-screwdriver-wrench text-neutral-500 dark:text-neutral-400 group-hover:text-brand transition-colors"></i>
                         </div>
-                        <span class="text-[10px] font-black tracking-[0.25em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Support</span>
+                        <span class="text-[9px] font-black tracking-[0.2em] uppercase text-neutral-500 group-hover:text-brand transition-colors text-center">Support</span>
                     </div>
                 </a>
 
@@ -236,6 +247,7 @@
                         <a href="products.html">All Collections</a>
                         <a href="cooling-appliances.html">Cooling</a>
                         <a href="wooden-beds.html">Furniture</a>
+                        <a href="home-lifestyle.html">Lifestyle</a>
                     </div>
                 </div>
                 <div class="space-y-8 text-[10px] font-black tracking-[0.4em]">
