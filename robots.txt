@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://elumalaiyan.in/sitemap.xml
+Sitemap: https://elumalaiyanenterprises.com/sitemap.xml
