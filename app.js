@@ -1,15 +1,37 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 3.3 (Live GitHub Data Sync & Unified UI)
+ * Version: 3.4 (Dynamic Slider & Unified UI)
  */
 
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
 
+// --- Slider Engine ---
+function initHeroSlider() {
+    const track = document.getElementById('slider-track');
+    const slides = document.querySelectorAll('.hero-slide');
+    if (!track || slides.length === 0) return;
+
+    let currentSlide = 0;
+    const slideCount = slides.length;
+
+    const updateSlider = () => {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    };
+
+    const nextSlide = () => {
+        currentSlide = (currentSlide + 1) % slideCount;
+        updateSlider();
+    };
+
+    // Auto-play every 5 seconds
+    setInterval(nextSlide, 5000);
+}
+
+// --- Product Engine ---
 async function productEngine({ category = null, featuredOnly = false, containerId, searchBoxId = null }) {
     const grid = document.getElementById(containerId);
     if (!grid) return;
 
-    // Premium Skeleton Loader
     grid.innerHTML = `
         <div class="col-span-full flex flex-col items-center py-20 opacity-40">
             <div class="w-12 h-12 border-2 border-brand border-t-transparent rounded-full animate-spin mb-4"></div>
@@ -23,7 +45,7 @@ async function productEngine({ category = null, featuredOnly = false, containerI
 
         const render = (items) => {
             if (items.length === 0) {
-                grid.innerHTML = `<p class="col-span-full text-center py-20 text-gray-400 font-bold uppercase tracking-widest text-xs">No items found in vault.</p>`;
+                grid.innerHTML = `<p class="col-span-full text-center py-20 text-gray-400 font-bold uppercase tracking-widest text-xs">No items found.</p>`;
                 return;
             }
             grid.innerHTML = items.map(p => `
@@ -58,12 +80,12 @@ async function productEngine({ category = null, featuredOnly = false, containerI
         }
     } catch (err) {
         console.error("SYNC_ERROR:", err);
-        grid.innerHTML = `<div class="col-span-full text-center py-20 text-red-500 font-black tracking-widest text-xs uppercase">Catalog Sync Error</div>`;
     }
 }
 
+// --- Global UI Init ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Nav Glassmorphism Scroll
+    // Nav Scroll Effect
     window.addEventListener('scroll', () => {
         const nav = document.getElementById('main-nav');
         if (window.scrollY > 50) {
@@ -75,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Unified Theme Toggle
+    // Theme Engine
     const t = document.getElementById('theme-toggle'), i = document.getElementById('theme-icon');
     if (t && i) {
         const update = (dark) => { i.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; };
@@ -87,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // Unified Mobile Menu
+    // Mobile Menu
     const mb = document.getElementById('mobile-menu-button'), mm = document.getElementById('mobile-menu');
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
+
+    initHeroSlider();
 });
