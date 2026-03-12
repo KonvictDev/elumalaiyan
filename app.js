@@ -1,39 +1,50 @@
 /**
  * Elumalaiyan Enterprises - Global App Controller
- * Version: 2.5 (Live GitHub Data Integration)
+ * Version: 3.0 (Glassmorphism & Skew UI)
  */
 
-// Your live GitHub data source
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/KonvictDev/elumalaiyan/refs/heads/main/products.json';
 
 async function productEngine({ category = null, featuredOnly = false, containerId, searchBoxId = null }) {
     const grid = document.getElementById(containerId);
     if (!grid) return;
 
-    // Loading State
-    grid.innerHTML = `<div class="col-span-full text-center py-10 opacity-50 uppercase tracking-widest text-xs">Synchronizing with Catalog...</div>`;
+    grid.innerHTML = `
+        <div class="col-span-full flex flex-col items-center py-20 opacity-40">
+            <div class="w-12 h-12 border-4 border-brand border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p class="uppercase tracking-[0.3em] text-[10px] font-bold">Refining Collection...</p>
+        </div>`;
 
     try {
         const response = await fetch(GITHUB_JSON_URL);
-        
-        if (!response.ok) throw new Error(`Network Error: ${response.status}`);
-
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const allProducts = await response.json();
 
         const render = (items) => {
             if (items.length === 0) {
-                grid.innerHTML = `<p class="col-span-full text-center py-10 text-gray-400">No items found in this category.</p>`;
+                grid.innerHTML = `<p class="col-span-full text-center py-20 text-gray-400">No matching items in the vault.</p>`;
                 return;
             }
             grid.innerHTML = items.map(p => `
-                <article class="bg-white dark:bg-neutral-900 rounded-xl p-5 border border-gray-200 dark:border-neutral-800 hover:border-brand transition-all group animate-fade-in shadow-sm hover:shadow-xl">
-                    <div class="h-52 bg-gray-50 dark:bg-white rounded mb-4 overflow-hidden flex items-center justify-center">
-                        <img src="${p.image}" alt="${p.name}" loading="lazy" class="max-h-full object-contain group-hover:scale-110 transition-transform duration-500">
+                <article class="group relative bg-white dark:bg-neutral-900/40 backdrop-blur-md rounded-3xl p-6 border border-white/20 dark:border-white/5 hover:border-brand/50 transition-all duration-500 shadow-xl hover:-translate-y-2 overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-brand"></i>
                     </div>
-                    <span class="text-[10px] uppercase font-bold text-brand/70 tracking-widest">${p.category}</span>
-                    <h3 class="font-bold text-gray-900 dark:text-gray-200 uppercase tracking-tighter mt-1">${p.name}</h3>
-                    <p class="text-xs text-gray-500 mt-1 font-medium uppercase tracking-widest">${p.brands}</p>
-                    <a href="https://wa.me/919876543210?text=Inquiry about ${p.name}" class="mt-4 block text-center border border-gray-200 dark:border-neutral-800 py-2.5 rounded-lg font-bold hover:bg-brand hover:text-black hover:border-brand transition-all">INQUIRE PRICE</a>
+                    <div class="h-56 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-neutral-800 dark:to-neutral-900 rounded-2xl mb-6 overflow-hidden flex items-center justify-center p-8">
+                        <img src="${p.image}" alt="${p.name}" loading="lazy" class="max-h-full object-contain group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700">
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-brand rounded-full animate-pulse"></span>
+                            <span class="text-[10px] uppercase font-black text-brand tracking-[0.2em]">${p.category}</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-gray-900 dark:text-white leading-tight uppercase tracking-tighter">${p.name}</h3>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-widest">${p.brands}</p>
+                    </div>
+                    <a href="https://wa.me/919876543210?text=I am inquiring about the ${p.name}" 
+                       class="mt-8 flex items-center justify-center gap-3 w-full bg-neutral-900 dark:bg-white text-white dark:text-black py-4 rounded-xl font-black text-xs tracking-[0.2em] hover:bg-brand hover:text-black transition-all transform active:scale-95">
+                       INQUIRE PRICE
+                    </a>
                 </article>
             `).join('');
         };
@@ -44,47 +55,43 @@ async function productEngine({ category = null, featuredOnly = false, containerI
 
         render(filtered);
 
-        // Search functionality
         if (searchBoxId) {
-            const searchInput = document.getElementById(searchBoxId);
-            searchInput.addEventListener('input', (e) => {
+            document.getElementById(searchBoxId).addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                const searched = filtered.filter(p => 
-                    p.name.toLowerCase().includes(term) || 
-                    p.brands.toLowerCase().includes(term) ||
-                    p.category.toLowerCase().includes(term)
-                );
-                render(searched);
+                render(filtered.filter(p => p.name.toLowerCase().includes(term) || p.brands.toLowerCase().includes(term)));
             });
         }
-
     } catch (err) {
-        console.error("REMOTE FETCH ERROR:", err);
-        grid.innerHTML = `
-            <div class="col-span-full text-center py-10 border-2 border-dashed border-red-200 dark:border-red-900/30 rounded-2xl">
-                <p class="text-red-500 font-bold uppercase tracking-widest text-xs">Remote Connection Failed</p>
-                <p class="text-[10px] text-gray-500 mt-2 italic">Error: ${err.message}</p>
-            </div>`;
+        grid.innerHTML = `<div class="col-span-full text-center py-20 text-red-500 font-bold uppercase tracking-widest text-xs">Catalog Sync Error</div>`;
     }
 }
 
-// Global UI Initialization
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme Logic
-    const t = document.getElementById('theme-toggle');
-    const i = document.getElementById('theme-icon');
+    // Nav Scroll Effect
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (window.scrollY > 50) {
+            nav.classList.add('py-4', 'bg-white/80', 'dark:bg-black/80', 'backdrop-blur-xl', 'shadow-2xl');
+            nav.classList.remove('py-8');
+        } else {
+            nav.classList.remove('py-4', 'bg-white/80', 'dark:bg-black/80', 'backdrop-blur-xl', 'shadow-2xl');
+            nav.classList.add('py-8');
+        }
+    });
+
+    // Theme Engine
+    const t = document.getElementById('theme-toggle'), i = document.getElementById('theme-icon');
     if (t && i) {
-        const updateIcon = (isDark) => i.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        if (document.documentElement.classList.contains('dark')) updateIcon(true);
+        const update = (dark) => { i.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; };
+        if (document.documentElement.classList.contains('dark')) update(true);
         t.onclick = () => {
             const dark = document.documentElement.classList.toggle('dark');
             localStorage.setItem('color-theme', dark ? 'dark' : 'light');
-            updateIcon(dark);
+            update(dark);
         };
     }
 
-    // Mobile Navigation Logic
-    const mb = document.getElementById('mobile-menu-button');
-    const mm = document.getElementById('mobile-menu');
+    // Menu Logic
+    const mb = document.getElementById('mobile-menu-button'), mm = document.getElementById('mobile-menu');
     if (mb && mm) mb.onclick = () => mm.classList.toggle('hidden');
 });
