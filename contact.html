@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <title>Contact | Elumalaiyan</title>
@@ -11,28 +11,28 @@
         if (localStorage.getItem('color-theme') === 'dark') document.documentElement.classList.add('dark');
     </script>
 </head>
-<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-white">
-    <nav class="p-10 flex justify-between items-center">
-        <a href="index.html" class="font-serif font-black text-2xl">ELUMALAIYAN</a>
-        <button id="theme-toggle" class="w-12 h-12 border rounded-full"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-white transition-colors duration-500">
+    <nav class="p-10 flex justify-between items-center uppercase text-[10px] font-black tracking-[0.3em]">
+        <a href="index.html" class="font-serif text-2xl tracking-normal">ELUMALAIYAN</a>
+        <div class="flex gap-6 items-center">
+            <button id="theme-toggle" class="w-12 h-12 border rounded-full"><i id="theme-icon" class="fa-solid fa-moon"></i></button>
+            <a href="index.html" class="border-b border-brand">Home</a>
+        </div>
     </nav>
-
     <main class="max-w-7xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-7xl md:text-9xl font-serif font-black tracking-tighter uppercase mb-20 leading-none">Visit <br> <span class="text-brand opacity-30 italic">Showroom.</span></h1>
-        
-        <div class="grid md:grid-cols-2 gap-12 text-left">
+        <h1 class="text-7xl md:text-9xl font-serif font-black tracking-tighter uppercase mb-20 leading-none">Connect <br> <span class="text-brand opacity-30 italic">Showroom.</span></h1>
+        <div class="grid md:grid-cols-2 gap-12 text-left uppercase text-xs tracking-widest font-black">
             <div class="bg-white/50 dark:bg-neutral-900/40 backdrop-blur-3xl p-16 rounded-[3rem] border border-white/20 shadow-2xl">
-                <h2 class="text-xs font-black tracking-[0.4em] text-brand mb-10 uppercase">Coimbatore Flagship</h2>
-                <div class="space-y-8">
-                    <p class="text-xl font-bold leading-relaxed"><i class="fa-solid fa-location-dot text-brand mr-4"></i> Cross Cut Road, Coimbatore,<br>Tamil Nadu 641001</p>
-                    <p class="text-xl font-bold leading-relaxed"><i class="fa-solid fa-phone text-brand mr-4"></i> +91 98765 43210</p>
+                <h2 class="text-brand mb-10">Location Details</h2>
+                <div class="space-y-8 text-lg font-bold">
+                    <p><i class="fa-solid fa-location-dot text-brand mr-4"></i> Cross Cut Road, Coimbatore,<br>Tamil Nadu 641001</p>
+                    <p><i class="fa-solid fa-phone text-brand mr-4"></i> +91 98765 43210</p>
                 </div>
             </div>
-
             <div class="bg-neutral-950 p-16 rounded-[3rem] text-white flex flex-col justify-center">
-                <h2 class="text-xs font-black tracking-[0.4em] text-brand mb-10 uppercase">Digital Inquiry</h2>
-                <p class="text-neutral-500 mb-10 font-bold leading-relaxed">Connect directly with our sales consultants via WhatsApp for bespoke pricing and home delivery details.</p>
-                <a href="https://wa.me/919876543210" class="block bg-brand text-black py-6 rounded-2xl font-black text-xs tracking-widest text-center hover:bg-white transition-all shadow-xl">START CHAT</a>
+                <h2 class="text-brand mb-10">Live Support</h2>
+                <p class="text-neutral-500 mb-10 leading-loose">Message our specialists directly for product pricing and local delivery info.</p>
+                <a href="https://wa.me/919876543210" class="block bg-brand text-black py-6 rounded-2xl text-center hover:bg-white transition-all shadow-xl">Start WhatsApp Inquiry</a>
             </div>
         </div>
     </main>
