@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Elumalaiyan Enterprises</title>
+    <script>
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { brand: '#D4AF37' }, fontFamily: { sans: ['Inter'], serif: ['Cinzel'] } } }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+        }
+        .dark .liquid-glass {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-[#fafafa] dark:bg-[#050505] text-neutral-900 dark:text-neutral-100 transition-colors duration-500 selection:bg-brand selection:text-black flex flex-col min-h-screen relative">
+
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[400px] bg-brand/15 dark:bg-brand/20 rounded-[100%] blur-[100px] -z-10 pointer-events-none"></div>
+
+    <header id="main-nav" class="fixed top-0 inset-x-0 z-[100] transition-all duration-700 py-8 border-b border-transparent">
+        <nav class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <button id="mobile-menu-button" class="lg:hidden text-2xl"><i class="fa-solid fa-bars-staggered"></i></button>
+                <a href="index.html" class="flex items-center gap-4 group">
+                    <img src="logo.jpeg" alt="Logo" class="h-12 md:h-16 rounded-xl group-hover:scale-110 transition-transform">
+                    <div class="hidden sm:block">
+                        <span class="block text-2xl font-serif font-black tracking-widest leading-none uppercase">ELUMALAIYAN</span>
+                        <span class="block text-[9px] font-black tracking-[0.6em] text-brand uppercase">ENTERPRISES</span>
+                    </div>
+                </a>
+            </div>
+            <div class="hidden lg:flex items-center gap-6 xl:gap-10">
+                <a href="index.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Home</a>
+                <a href="products.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Catalog</a>
+                <div class="h-4 w-[1px] bg-neutral-200 dark:bg-neutral-800"></div>
+                <a href="cooling-appliances.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Cooling</a>
+                <a href="kitchen-appliances.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Kitchen</a>
+                <a href="wooden-beds.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Furniture</a>
+                <a href="home-lifestyle.html" class="text-[10px] font-black tracking-[0.25em] hover:text-brand transition-colors uppercase">Lifestyle</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <button id="theme-toggle" class="w-12 h-12 flex items-center justify-center rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-brand transition-all liquid-glass">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+                <a href="contact.html" class="hidden md:block bg-brand text-black px-10 py-4 rounded-full font-black text-[10px] tracking-widest hover:invert transition-all shadow-xl uppercase">Contact</a>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden fixed inset-0 top-[110px] liquid-glass backdrop-blur-3xl p-10 flex flex-col gap-8 text-center font-black tracking-widest text-xl uppercase z-[101] overflow-y-auto">
+            <a href="index.html">Home</a>
+            <a href="products.html">Catalog</a>
+            <a href="cooling-appliances.html">Cooling</a>
+            <a href="kitchen-appliances.html">Kitchen</a>
+            <a href="wooden-beds.html">Furniture</a>
+            <a href="home-lifestyle.html">Lifestyle</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center pt-48 pb-32 max-w-7xl mx-auto px-6 text-center relative z-10">
+        <div class="liquid-glass p-12 md:p-24 rounded-[3rem] border border-white/40 dark:border-white/10 shadow-2xl max-w-3xl">
+            <h1 class="text-8xl md:text-9xl font-serif font-black text-brand tracking-tighter leading-none mb-6">404</h1>
+            <h2 class="text-2xl md:text-4xl font-black uppercase tracking-widest mb-6">Page Not Found</h2>
+            <p class="text-neutral-600 dark:text-neutral-400 font-medium text-sm md:text-base leading-relaxed max-w-lg mx-auto mb-10">
+                The showroom section you are looking for has been moved, removed, or is temporarily unavailable. 
+            </p>
+            <a href="index.html" class="inline-flex items-center gap-4 bg-brand text-black px-10 py-5 rounded-full font-black text-[10px] tracking-[0.4em] hover:bg-white transition-all shadow-xl uppercase">
+                <i class="fa-solid fa-house"></i> Return to Homepage
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-neutral-950 text-white pt-32 pb-12 relative overflow-hidden mt-auto">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-24 mb-32 uppercase tracking-widest">
+                <div class="lg:col-span-2 space-y-10">
+                    <h3 class="text-5xl font-serif font-black tracking-tighter leading-none">ELUMALAIYAN <br> <span class="text-brand">ENTERPRISES</span></h3>
+                    <p class="text-neutral-500 text-sm max-w-md leading-relaxed font-medium lowercase tracking-normal">Authorized multi-brand showroom for high-performance home appliances and heritage wood furniture in Coimbatore.</p>
+                </div>
+                <div class="space-y-8 text-[10px] font-black tracking-[0.4em]">
+                    <h4 class="text-brand">Explore</h4>
+                    <div class="flex flex-col gap-4 text-neutral-400">
+                        <a href="products.html">All Collections</a>
+                        <a href="cooling-appliances.html">Cooling</a>
+                        <a href="wooden-beds.html">Furniture</a>
+                        <a href="home-lifestyle.html">Lifestyle</a>
+                    </div>
+                </div>
+                <div class="space-y-8 text-[10px] font-black tracking-[0.4em]">
+                    <h4 class="text-brand">HQ</h4>
+                    <div class="text-neutral-400 space-y-4">
+                        <p>Cross Cut Road,<br>Coimbatore 641001</p>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-12 flex justify-between items-center opacity-40 text-[9px] font-black tracking-[0.6em] uppercase">
+                <p>© 2026 Elumalaiyan Enterprises</p>
+                <div class="flex gap-10">
+                    <i class="fa-brands fa-whatsapp text-xl hover:text-brand cursor-pointer transition-colors"></i>
+                    <i class="fa-brands fa-instagram text-xl hover:text-brand cursor-pointer transition-colors"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            if(btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+            window.addEventListener('scroll', () => {
+                const nav = document.getElementById('main-nav');
+                if (window.scrollY > 40) {
+                    nav.classList.add('liquid-glass', 'py-4');
+                    nav.classList.remove('py-8');
+                } else {
+                    nav.classList.remove('liquid-glass', 'py-4');
+                    nav.classList.add('py-8');
+                }
+            });
+
+            const t = document.getElementById('theme-toggle'), i = document.getElementById('theme-icon');
+            if (t && i) {
+                const update = (dark) => { i.className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'; };
+                if (document.documentElement.classList.contains('dark')) update(true);
+                t.onclick = () => {
+                    const dark = document.documentElement.classList.toggle('dark');
+                    localStorage.setItem('color-theme', dark ? 'dark' : 'light');
+                    update(dark);
+                };
+            }
+        });
+    </script>
+</body>
+</html>
